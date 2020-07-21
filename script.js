@@ -48,3 +48,28 @@ function innitAccordion() {
     }
 };
 innitAccordion();
+
+//Scroll Suave
+function scrollSuave() {
+    const elemetoScroll = document.querySelectorAll('.js-menu a[href^="#"]');
+
+
+    if (elemetoScroll.length) {
+        function scrollItem(event) {
+            event.preventDefault();
+
+            const href = event.currentTarget.getAttribute('href');
+            const section = document.querySelector(href);
+            const alturaSction = section.offsetTop;
+
+            window.scrollTo(0, alturaSction);
+
+        }
+
+        elemetoScroll.forEach(function (link) {
+            link.addEventListener('click', scrollItem);
+        });
+    }
+
+};
+scrollSuave();
