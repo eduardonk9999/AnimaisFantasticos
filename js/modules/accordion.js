@@ -1,18 +1,22 @@
 export default function initAccordion() {
-  const accordionList = document.querySelectorAll('[data-anime="accordion"] dt');
   const activeClass = 'ativo';
-  
-  if(accordionList.length) {
-    accordionList[0].classList.add(activeClass);
-    accordionList[0].nextElementSibling.classList.add(activeClass);
+  const listaAccordion = document.querySelectorAll(".faq-lista dt");
 
-    function activeAccordion() {
-      this.classList.toggle(activeClass);
-      this.nextElementSibling.classList.toggle(activeClass);
-    }
+  listaAccordion.forEach(function(itemDT){
+    itemDT.addEventListener('click', function(){
+      listaAccordion.forEach(function(itemR){
+      
+        itemR.classList.remove(activeClass);
+        itemR.nextElementSibling.classList.remove(activeClass);
+      });
+      this.classList.add(activeClass);
+      this.nextElementSibling.classList.add(activeClass);
 
-    accordionList.forEach((item) => {
-      item.addEventListener('click', activeAccordion);
     });
-  }
-}
+  });
+
+  
+  
+
+};
+

@@ -12,6 +12,7 @@ ul {
   list-style: none;
 }
 
+
 body {
   background: #faf6ed;
   color: #222;
@@ -252,20 +253,20 @@ body {
   }
 }
 
-.js [data-anime="accordion"] dd {
+.faq-lista dd {
   display: none;
 }
 
-[data-anime="accordion"] dt::after {
+.faq-lista dt::after {
   content: '⬎';
   margin-left: 10px;
 }
 
-[data-anime="accordion"] dt.ativo::after {
+.faq-lista dt.ativo::after {
   content: '⬏';
 }
 
-[data-anime="accordion"] dd.ativo {
+.faq-lista dd.ativo {
   display: block;
   animation: slideDown .5s forwards;
 }
